@@ -5,7 +5,7 @@ import * as path from 'path'
  * Json loader support for *.json files.
  * See: https://github.com/webpack/json-loader
  */
-export = function json({exclude = null}) {
+export = function json({exclude = null} = {}) {
   return function json(this: WebpackConfig): WebpackConfig {
     return {
       module: {
