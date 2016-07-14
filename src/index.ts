@@ -12,7 +12,7 @@ export = function json({exclude = null} = {}) {
         loaders: get(this, 'module.loaders', []).concat([{
           test: /\.json$/i,
           loader: 'json',
-          exclude: exclude || this.metadata.root ? [path.join(this.metadata.root, 'node_modules')] : [],
+          exclude: exclude || (this.metadata.root ? [path.join(this.metadata.root, 'node_modules')] : []),
         }])
       }
     }
