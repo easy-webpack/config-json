@@ -1,4 +1,4 @@
-import {WebpackConfig, get} from '@easy-webpack/core'
+import {WebpackConfigWithMetadata, get} from '@easy-webpack/core'
 import * as path from 'path'
 
 /**
@@ -6,7 +6,7 @@ import * as path from 'path'
  * See: https://github.com/webpack/json-loader
  */
 export = function json({exclude = null} = {}) {
-  return function json(this: WebpackConfig): WebpackConfig {
+  return function json(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
     return {
       module: {
         loaders: get(this, 'module.loaders', []).concat([{
