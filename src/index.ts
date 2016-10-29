@@ -9,7 +9,7 @@ export = function json({exclude = null} = {}) {
   return function json(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
     return {
       module: {
-        loaders: get(this, 'module.loaders', []).concat([{
+        rules: get(this, 'module.rules', []).concat([{
           test: /\.json$/i,
           loader: 'json',
           exclude: exclude || (this.metadata.root ? [path.join(this.metadata.root, 'node_modules')] : []),
